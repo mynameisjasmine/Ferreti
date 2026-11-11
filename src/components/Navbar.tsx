@@ -1,8 +1,9 @@
 import { Link } from 'react-router';
+import '../App.css'
 
 export default function Navbar() {
     return (
-        <nav>
+        <nav className='navbar'>
          <Link to="/">Home</Link>
          {" | "}
          <Link to="/editor">Editor</Link>

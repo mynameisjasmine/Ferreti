@@ -1,4 +1,19 @@
-.counter {
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  max-width: 300px;
+  
+  
+  padding: 30px; 
+  /* border: solid red  */
+}
+
+.navbuttons {
+
+}
+
+/* .counter {
   font-size: 16px;
   padding: 5px 10px;
   border-radius: 5px;
@@ -181,4 +196,4 @@
     right: 0;
     border-right-color: var(--border);
   }
-}
+} */
