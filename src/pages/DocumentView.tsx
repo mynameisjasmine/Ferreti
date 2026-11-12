@@ -1,4 +1,14 @@
+import { useParams } from "react-router";
 
 export default function DocumentView() {
-    return <h1>Welcome to the Document View page.</h1>
+    const { id } = useParams<{ id: string }>()
+    
+    return(
+        <>
+       <div>
+        <h1>Document Viewer</h1>
+        <p>Viewing document ID: {id}</p>
+       </div>
+        </>
+    ) 
 }

@@ -17,8 +17,8 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />}/>
-        <Route path="/editor" element={<Editor />}/>
-        <Route path="/documentview" element={<DocumentView />}/>
+        <Route path="/editor/:id?" element={<Editor />}/>
+        <Route path="/documentview/:id" element={<DocumentView />}/>
         <Route path="*" element={<NotFound />}/>
       </Routes>
       

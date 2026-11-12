@@ -1,4 +1,15 @@
+import { useParams } from 'react-router';
+
 
 export default function Editor() {
-    return <h1>Welcome to the Editor page.</h1>
+    const  { id } = useParams<{ id: string }>()
+
+    return (
+        <>
+        <div>
+            <h1>{id ? "Edit Document" : "Create Document"}</h1>
+            {id && <p>Editing document ID: {id}</p>}
+        </div>
+        </>
+    ) 
 }
