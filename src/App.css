@@ -13,6 +13,30 @@
 
 }
 
+
+.new-doc {
+  display: flex;
+  margin: 100px 0px 30px 0px;
+
+  /* justify-content: flex-start; */
+  /* border: solid red 5px; */
+  
+}
+.doc-button {
+  
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background-color: rgb(47, 47, 232);
+}
+
+.ext-docs {
+  display: flex;
+  justify-content: flex-start;
+}
+
 /* .counter {
   font-size: 16px;
   padding: 5px 10px;
