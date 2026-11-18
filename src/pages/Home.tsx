@@ -1,30 +1,45 @@
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
+import { loadDocs, deleteDoc } from '../storage';
+import type { Doc } from '../types';
+import { useEffect, useState } from 'react';
 import '../App.css'
 
 export default function Home() {
-    return(
+    const [docs, setDocs] = useState<Doc[]>([]);
+    const navigate = useNavigate();
+
+    useEffect(()=> {
+    setDocs(loadDocs())
+    }, []);
+
+    const handleDelete = (id: string) => {
+        if(!confirm("Delete this document?")) return
+        deleteDoc(id)
+        setDocs(loadDocs())
+    }
+
+    return (
         <>
         <div>
-            <h1>My Documentation</h1>
+            <h1>Documentation</h1>
+            <button className='new-doc-button' onClick={()=> navigate("/editor")}>+ New Document</button>
 
-            <div className='new-doc'>
-             <button className='doc-button'><Link to="/editor"> + Create</Link></button>
-            </div>
-            
-           <div className='ext-docs'>
-            <h2>Existing Documents</h2>
+            {docs.length === 0 && <p className='home-text'>No documents yet.</p>}
 
-            <ul>
-                <li>
-                    <Link to="/documentview/123">View Document</Link>
+             <ul>
+            {docs.map((doc) => (
+                <li key={doc.id}>
+                <Link to={`/documentview/${doc.id}`}>{doc.title}</Link>
+                <span>- updated {new Date(doc.updatedAt).toLocaleString()}</span>
+                
+                <button onClick={() => navigate(`/editor/${doc.id}`)}>Edit</button>
+                
+                <button onClick={() => handleDelete(doc.id)}>Delete</button>
                 </li>
 
-                <li>
-                    <Link to="/editor/123">Edit Document</Link>
-                </li>
-            </ul>
-            </div>
+            ))}
+        </ul>
         </div>
         </>
-    )
-}
+     )
+   }

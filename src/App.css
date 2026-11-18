@@ -9,7 +9,12 @@
   /* border: solid red  */
 }
 
-.navbuttons {
+.new-doc-button {
+  margin-top: 15px;
+}
+
+.home-text {
+  margin-top: 70px;
 
 }
 
@@ -22,7 +27,7 @@
   /* border: solid red 5px; */
   
 }
-.doc-button {
+/* .doc-button {
   
   font-size: 1rem;
   color: #ffffff;
@@ -30,7 +35,7 @@
   padding: 8px 10px;
   border-radius: 8px;
   background-color: rgb(47, 47, 232);
-}
+} */
 
 .ext-docs {
   display: flex;
